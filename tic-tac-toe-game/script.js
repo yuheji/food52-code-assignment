@@ -27,6 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 });
 
+/**
+ * Handles main gameplay loop, updating cells on click
+ * 
+ * @param {Element} el 
+ * @returns 
+ */
 function handleCellClick(el) {
   let status = document.getElementById(gameStatusId);
   let target = el.target;
@@ -36,12 +42,10 @@ function handleCellClick(el) {
   }
 
   if (turnCount % 2 === 0) {
-    // target.innerText = 'x';
     drawX(target);
     target.dataset.value = 'x';
     status.innerText = 'Player O\'s Turn';
   } else {
-    // target.innerText = 'o';
     drawO(target);
     target.dataset.value = 'o';
     status.innerText = 'Player X\'s Turn';
@@ -66,6 +70,12 @@ function handleCellClick(el) {
   turnCount++;
 }
 
+/**
+ * Handles game logic for if a player has won,
+ * based on winningCombinations array
+ * 
+ * @returns {boolean} winner
+ */
 function checkForWinner() {
   let winner = false;
 
@@ -81,6 +91,9 @@ function checkForWinner() {
   return winner;
 }
 
+/**
+ * Clears cell inner HTML, and resets game state
+ */
 function clearBoard() {
   let status = document.getElementById(gameStatusId);
   this.positions = Array.from(document.querySelectorAll('.cell'));
@@ -93,12 +106,22 @@ function clearBoard() {
   status.innerText = 'Player X\'s Turn';
 }
 
+/**
+ * Adds a div with xPiece class name under target div
+ * 
+ * @param {Element} target 
+ */
 function drawX(target) {
   let x = document.createElement('div');
   x.className = xPiece;
   target.appendChild(x);
 }
 
+/**
+ * Adds a div with circlePiece class name under target div
+ * 
+ * @param {Element} target 
+ */
 function drawO(target) {
   let circle = document.createElement('div');
   circle.className = circlePiece;
