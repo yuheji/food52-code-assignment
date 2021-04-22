@@ -1,0 +1,112 @@
+.tic-tac-toe-header {
+  color: #444;
+  font-family: "Nunito";
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.33;
+  margin: 60px 0 20px 0;
+  text-align: center;
+}
+
+body {
+  font-family: "Nunito";
+}
+
+.game-container {
+  background-color: white;
+  border: 1px solid #c4c4c4;
+  height: fit-content;
+  margin: auto;
+  padding: 15px;
+  width: fit-content;
+}
+
+.row {
+  height: 100px;
+}
+
+.cell {
+  align-items: center;
+  background-color: #eaeaea;
+  cursor: pointer;
+  display: flex;
+  float: left;
+  height: 100px;
+  justify-content: center;
+  text-align: center;
+  width: 100px;
+}
+
+.cell:hover {
+  background-color: lightgray;
+}
+
+.row--border-bottom {
+  border-bottom: 2px solid white;
+}
+
+.cell--border-right {
+  border-right: 2px solid white;
+}
+
+.piece--x {
+  height: 52px;
+  width: 52px;
+}
+
+.piece--x:after {
+  border-left: 3px solid #2d4558;
+  content: '';
+  height: 52px;
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+.piece--x:before {
+  border-left: 3px solid #2d4558;
+  content: '';
+  height: 52px;
+  position: absolute;
+  transform: rotate(-45deg);
+}
+
+.piece--circle {
+  border: 3px solid #2d4558;
+  border-radius: 50%;
+  height: 36px;
+  margin: auto;
+  top: 50%;
+  width: 36px;
+}
+
+.new-game-btn {
+  align-items: center;
+  background-color: #2d4558;
+  border-radius: 2px;
+  cursor: pointer;
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  margin: auto;
+  margin-top: 32px;
+  width: 200px;
+}
+
+.new-game-btn h2 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.game-status h2 {
+  color: #444;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.33;
+  margin: 60px 0 20px 0;
+  text-align: center;
+}
